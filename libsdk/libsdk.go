@@ -1061,7 +1061,7 @@ func cfs_rename(id C.int64_t, from *C.char, to *C.char) C.int {
 	if err != nil {
 		return errorToStatus(err)
 	}
-
+log.LogWarnf("[rename] change to overwrite")
 	err = c.mw.Rename_ll(srcDirInfo.Inode, srcName, dstDirInfo.Inode, dstName, true)
 	c.ic.Delete(srcDirInfo.Inode)
 	c.ic.Delete(dstDirInfo.Inode)
