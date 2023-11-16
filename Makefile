@@ -30,7 +30,7 @@ fsck:
 	@build/build.sh fsck $(GOMOD)
 
 libsdk: 
-	@build/build.sh libsdk $(GOMOD)
+	@build/build_sdk.sh  $(GOMOD)
 
 fdstore: 
 	@build/build.sh fdstore $(GOMOD)
